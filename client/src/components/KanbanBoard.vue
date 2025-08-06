@@ -4,6 +4,7 @@
       v-for="status in statuses"
       :key="status"
       :status="status"
+      @openTask="$emit('openTask', $event)"
     />
   </div>
 </template>
@@ -17,7 +18,9 @@ const statuses = ['To Be Done', 'In Progress', 'Completed']
 <style scoped>
 .kanban-board {
   display: flex;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+  overflow-x: auto;
 }
 </style>
